@@ -1,0 +1,66 @@
+/*Overlay-Section*/
+
+.d-none {
+    display: none;
+}
+
+.overlay-section {
+    position: absolute;
+    height: 688px;
+    width: 675px;
+    background-color: var(--nav-footer-bg-overlay-color);
+    border-radius: 40px;
+}
+
+
+.dialog {
+    padding: 56px 64px 56px 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dialog-header p {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.close-button:hover {
+    scale: calc(110%);
+    color: var(--font-big-screen-color);
+    cursor: pointer;
+    transform: scale(110%);
+}
+
+.dialog-img {
+    width: 560px;
+    height: 375px;
+    border: solid var(--img-solid-color);
+}
+
+.dialog-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 56px;
+}
+
+.img-rotate {
+    rotate: 180deg;
+}
+
+.img-rotate:hover {
+    background-image: url(/assets/logos/Property\ 1=Default.png);
+    cursor: pointer;
+}
+
+.img-default:hover {
+    background-image: url(/assets/logos/Property\ 1=Default.png);
+    cursor: pointer;
+}

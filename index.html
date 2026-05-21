@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
@@ -8,33 +8,37 @@
     <link rel="icon" href="./assets/logos/Group.png">
     <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/fonts.css" />
-    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/overlay.css" />
+    <link rel="stylesheet" href="./styles/responsive.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="script.js"></script>
 </head>
 
-<body>
+<body onload="init()">
     <header>
         <nav><img src="./assets/logos/Capa_1.png" alt="Capa_1"></nav>
     </header>
 
     <main>
+        <!--Gallery-->
         <section class="gallery-section">
             <h1>Your personal photo album</h1>
-            <div class="album">
-                <div class="album-gap">
-                    <img src="./assets/img/12019-godafoss-1840758.jpg" alt="foss">
-                    <img src="./assets/img/12019-iceland-2111810.jpg" alt="iceland">
-                    <img src="./assets/img/7010naoto-cherryblossoms-9715202.jpg" alt="cherry">
-                    <img src="./assets/img/anek0o-etretat-10134406.png" alt="anek">
-                    <img src="./assets/img/atlantios-boat-3292934.jpg" alt="boat">
-                    <img src="./assets/img/ekamelev-insect-3060397.jpg" alt="insect">
-                    <img src="./assets/img/jan_meyes-winter-8481557.jpg" alt="winter">
+            <div id="content" class="album"></div>
+        </section>
+        <!--Dialog-->
+        <section id="dialog-content" class="overlay-section d-none">
+            <div class="dialog">
+                <div class="dialog-header">
+                    <p>Alaska-810433_1280</p>
+                    <p class="close-button" onclick="closeDialog()">X</p>
                 </div>
-                <div class="album-gap">
-                    <img src="./assets/img/ludo-photos-church-4964183.jpg" alt="church">
-                    <img src="./assets/img/myrichagnon-fire-9550265.jpg" alt="fire">
-                    <img src="./assets/img/mystraysoul-iris-5350997.jpg" alt="iris">
-                    <img src="./assets/img/naturfreund_pics-iceland-4493216.jpg" alt="iceland2">
-                    <img src="./assets/img/olcayertem-person-6065005.jpg" alt="person">
+                <div>
+                    <img id="dialogImg" class="dialog-img">
+                </div>
+                <div class="dialog-footer">
+                    <img onclick="showPrevImg()" class="img-rotate" src="/assets/logos/Property 1=Default (1).png">
+                    <p id="numbers"></p>
+                    <img onclick="showNextImg()" class="img-default" src="/assets/logos/Property 1=Default (1).png">
                 </div>
             </div>
         </section>
@@ -42,7 +46,7 @@
 
     <footer>
         <nav><img src="./assets/logos/Logo.png"></nav>
-        <p>© 2023 Developer Akademie GmbH</p>
+        <p>&copy; 2023 Developer Akademie GmbH</p>
     </footer>
 </body>
 

@@ -9,6 +9,14 @@ html {
     color: whitesmoke;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-bg-color);
+}
+
+/*Header-Nav*/
+
 header {
     height: 81px;
     max-height: 81px;
@@ -23,11 +31,7 @@ header nav {
     padding-left: 241px;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--main-bg-color);
-}
+/*Main*/
 
 main {
     display: flex;
@@ -36,6 +40,8 @@ main {
     justify-content: center;
     height: 100dvh;
 }
+
+/*Gallery-Section*/
 
 .gallery-section {
     display: flex;
@@ -49,6 +55,7 @@ main {
 .gallery-section h1 {
     font-size: 56px;
     font-weight: 800;
+    color: var(--font-h1-color);
 }
 
 .album {
@@ -70,6 +77,7 @@ main {
     border: solid var(--img-solid-color);
 }
 
+/*Footer-Nav+p*/
 
 footer {
     width: 100%;
@@ -95,4 +103,29 @@ footer nav {
 footer p {
     font-size: 14px;
     font-weight: 400;
+}
+
+/*Dialog-Section*/
+
+dialog {
+    border: 5px solid red;
+    transform: translateX(50px);
+    transition: all 2s ease-in;
+}
+
+dialog.opened {
+    border: 5px solid red;
+    transform: translateX(0px);
+    transition: all 2s ease-in;
+}
+
+dialog::backdrop {
+    opacity: 0;
+    background: grey;
+    transition: all 2s ease-in;
+}
+
+dialog.opened::backdrop {
+    opacity: 1;
+    transition: all 2s ease-in;
 }
