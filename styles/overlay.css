@@ -41,7 +41,6 @@
 .dialog-img {
     width: 560px;
     height: 375px;
-    border: solid var(--img-solid-color);
 }
 
 .dialog-footer {
@@ -63,4 +62,21 @@
 .img-default:hover {
     background-image: url(/assets/logos/Property\ 1=Default.png);
     cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+
+    .dialog {
+        padding: 16px 32px 16px 32px;
+    }
+
+    .overlay-section {
+        height: 664px;
+        width: 343px;
+        overflow: hidden;
+    }
+
+    .dialog-img {
+        width: 300px;
+    }
 }

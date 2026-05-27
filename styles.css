@@ -12,7 +12,9 @@ html {
 body {
     display: flex;
     flex-direction: column;
+    align-items: center;
     background-color: var(--main-bg-color);
+    gap: 160px;
 }
 
 /*Header-Nav*/
@@ -38,8 +40,6 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100dvh;
-    gap: 160px;
 }
 
 /*Gallery-Section*/
@@ -67,8 +67,6 @@ main {
 }
 
 .gallery-section img {
-    max-width: 160px;
-    max-height: 160px;
     height: 150px;
     width: 150px;
     border-radius: 16px;
@@ -107,4 +105,24 @@ footer nav {
 footer p {
     font-size: 14px;
     font-weight: 400;
+}
+
+@media screen and (max-width: 768px) {
+
+    body {
+        gap: 80px;
+    }
+
+    header nav {
+        padding-left: 0;
+    }
+
+    header {
+        justify-content: center;
+    }
+
+    .album {
+        gap: 10px;
+    }
+
 }
