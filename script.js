@@ -38,8 +38,10 @@ let myImgs = [
 
 let currentIndex = 0;
 
+//Body Onload
 function init() {
     addImg();
+    // setupOverlayListener();
 }
 
 // Fügt die Bilder ins HTML ein (For-Schleife)
@@ -50,13 +52,6 @@ function addImg() {
     }
 }
 
-//Dialog öffnen
-function openDialog(index) {
-    currentIndex = index;
-    updateDialog();
-    document.getElementById('dialog-content').style.display = 'flex';
-}
-
 //Öffnet das angeklickte Bild
 function updateDialog() {
     let ImageSrc = `assets/img/${myImgs[currentIndex]}`
@@ -65,17 +60,17 @@ function updateDialog() {
     document.getElementById('imgs-numbers').innerText = `IMG ${currentIndex + 1}  `;
 }
 
+//Dialog öffnen
+function openDialog(index) {
+    currentIndex = index;
+    updateDialog();
+    document.getElementById('dialog-content').style.display = 'flex';
+}
+
 //Dialog schließen
 function closeDialog() {
     document.getElementById('dialog-content').style.display = 'none';
 }
-
-// Schließt das Dialog-Element mit der ESC-Taste
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-        closeDialog();
-    }
-});
 
 // Vorheriges Bild
 function showPrevImg() {
@@ -97,7 +92,19 @@ function showNextImg() {
     updateDialog();
 }
 
-window.onload = function () {
-    init();
-    setupOverlayListener();
-};
+// Schließt das Dialog-Element mit der ESC-Taste
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        closeDialog();
+    }
+});
+
+//Wechselt die Bilder mit der Enter-Taste
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        showNextImg();
+    }
+});
+
+
+

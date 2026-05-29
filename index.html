@@ -4,44 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fotogram</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap">
     <link rel="icon" href="./assets/logos/Group.png">
-    <link rel="stylesheet" href="./styles/variables.css">
-    <link rel="stylesheet" href="./styles/fonts.css">
-    <link rel="stylesheet" href="./styles/overlay.css">
-    <link rel="stylesheet" href="./styles/responsive.css">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles/variables.css" />
+    <link rel="stylesheet" href="./styles/fonts.css" />
+    <link rel="stylesheet" href="./styles/overlay.css" />
+    <link rel="stylesheet" href="./styles/responsive.css" />
+    <link rel="stylesheet" href="./styles.css" />
     <script src="script.js"></script>
+    <title>Fotogram</title>
 </head>
 
 <body onload="init()">
     <header>
-        <nav><img src="./assets/logos/Capa_1.png" alt="Capa_1"></nav>
+        <a href="https://google.de" target="_blank">
+            <img src="./assets/logos/Group.png" alt="Logo">
+            <p>Fotogram</p>
+        </a>
     </header>
 
     <main>
         <!--Gallery-->
         <section class="gallery-section">
             <h1>Norwegen 2025</h1>
-            <div id="content" class="album"></div>
+            <button id="content" class="album"></button>
         </section>
         <!--Dialog-->
-        <section id="dialog-content" class="overlay-section d-none">
+        <dialog id="dialog-content" class="overlay-section d-none">
             <div class="dialog">
                 <div class="dialog-header">
                     <p id="imgs-numbers"></p>
-                    <p class="close-button" onclick="closeDialog()">X</p>
+                    <button class="close-button" onclick="closeDialog()">X</button>
                 </div>
                 <div>
                     <img id="dialogImg" class="dialog-img">
                 </div>
                 <div class="dialog-footer">
-                    <img onclick="showPrevImg()" class="img-rotate" src="./assets/logos/Property 1=Default (1).png">
+                    <button>
+                        <img onclick="showPrevImg()" class="img-rotate" src="./assets/logos/Property 1=Default (1).png">
+                    </button>
                     <p id="numbers"></p>
-                    <img onclick="showNextImg()" class="img-default" src="./assets/logos/Property 1=Default (1).png">
+                    <button>
+                        <img onclick="showNextImg()" class="img-default"
+                            src="./assets/logos/Property 1=Default (1).png">
+                    </button>
                 </div>
             </div>
-        </section>
+        </dialog>
     </main>
 
     <footer>

@@ -5,19 +5,24 @@
 }
 
 .overlay-section {
-    position: absolute;
+    position: fixed;
+    inset: 0;
     height: 688px;
-    width: 675px;
     background-color: var(--nav-footer-bg-overlay-color);
     border-radius: 40px;
+    margin: auto;
 }
-
 
 .dialog {
     padding: 56px 64px 56px 64px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 48px;
+}
+
+dialog {
+    border: solid var(--nav-footer-bg-overlay-color);
 }
 
 .dialog-header {
@@ -31,11 +36,29 @@
     font-weight: 700;
 }
 
+button {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.close-button {
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .close-button:hover {
-    scale: calc(110%);
+    scale: calc(120%);
     color: var(--font-big-screen-color);
     cursor: pointer;
     transform: scale(110%);
+}
+
+.close {
+    display: none;
 }
 
 .dialog-img {
