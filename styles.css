@@ -13,12 +13,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-color: var(--main-bg-color);
     min-height: 100dvh;
     gap: 160px;
+    margin: auto;
 }
 
-/*Header*/
+/*Header-a+p*/
 
 header {
     height: 81px;
@@ -30,12 +32,19 @@ header {
 
 }
 
+.header-content {
+    max-width: 1194px;
+    margin: 0 auto;
+    padding-right: 720px;
+}
+
 header a {
-    padding-left: 241px;
     display: flex;
+    justify-content: start;
     align-items: center;
     gap: 10px;
     text-decoration: none;
+    cursor: pointer;
 }
 
 header p {
@@ -46,11 +55,10 @@ header p {
 /*Main*/
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
     flex: 1;
+    padding: 0px 64px 0px 64px;
+    max-width: 1194px;
 }
 
 /*Gallery-Section*/
@@ -59,7 +67,6 @@ main {
     display: flex;
     flex-direction: column;
     text-align: center;
-    max-width: 1170px;
     gap: 80px;
 
 }
@@ -74,7 +81,6 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
 }
 
 .gallery-section img {
@@ -91,7 +97,7 @@ main {
 
 }
 
-/*Footer-Nav+p*/
+/*Footer-a+p*/
 
 footer {
     width: 100%;
@@ -107,10 +113,18 @@ footer {
 
 }
 
-footer nav {
+footer a {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+footer a p {
+    font-size: 24px;
+    line-height: 22px;
 }
 
 footer p {
@@ -118,7 +132,9 @@ footer p {
     font-weight: 400;
 }
 
-@media screen and (max-width: 768px) {
+/*Galery-Responsive*/
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
 
     body {
         gap: 80px;
@@ -130,10 +146,21 @@ footer p {
 
     header {
         justify-content: center;
+        padding-left: 0px;
     }
 
-    .album {
-        gap: 10px;
+}
+
+@media screen and (max-width: 480px) {
+
+    main {
+        padding: 0;
     }
+
+    header {
+        justify-content: center;
+        padding-left: 0px;
+    }
+
 
 }

@@ -1,39 +1,39 @@
 
-// Die Bilder
+// Photos
 let myImgs = [
-    "img01.jpg",
-    'img02.jpg',
-    'img03.jpg',
-    'img04.jpg',
-    'img05.jpg',
-    'img06.jpg',
-    'img07.jpg',
-    'img08.jpg',
-    'img09.jpg',
-    'img10.jpg',
-    'img11.jpg',
-    'img12.jpg',
-    'img13.jpg',
-    'img14.jpg',
-    'img15.jpg',
-    'img16.jpg',
-    'img17.jpg',
-    'img18.jpg',
-    'img19.jpg',
-    'img20.jpg',
-    'img21.jpg',
-    'img22.jpg',
-    'img23.jpg',
-    'img24.jpg',
-    'img25.jpg',
-    'img26.jpg',
-    'img27.jpg',
-    'img28.jpg',
-    'img29.jpg',
-    'img30.jpg',
-    'img31.jpg',
-    'img32.jpg',
-    'img33.jpg'
+    'Bar.jpg',
+    'Berg2.jpg',
+    'Berge.jpg',
+    'Bergen.jpg',
+    'Bergen2.jpg',
+    'Bergen3.jpg',
+    'Braten.jpg',
+    'Braten2.jpg',
+    'Brücke.jpg',
+    'Desert.jpg',
+    'Fischbrötchen.jpg',
+    'Grün.jpg',
+    'Grün2.jpg',
+    'Haus.jpg',
+    'Häuser.jpg',
+    'Insel.jpg',
+    'Longdrinks.jpg',
+    'McDonalds.jpg',
+    'MeinSchiffKrabbe.jpg',
+    'Omelette.jpg',
+    'Schiff.jpg',
+    'Schinken.jpg',
+    'Schlange.jpg',
+    'SchöneAusicht.jpg',
+    'See.jpg',
+    'See2.jpg',
+    'See3.jpg',
+    'Seetag.jpg',
+    'Seetag2.jpg',
+    'Seetag3.jpg',
+    'Sonnenaufgang.jpg',
+    'Sonnenuntergang.jpg',
+    'Wald.jpg'
 ];
 
 let currentIndex = 0;
@@ -44,67 +44,60 @@ function init() {
     // setupOverlayListener();
 }
 
-// Fügt die Bilder ins HTML ein (For-Schleife)
+// 1. Add Gallery
 function addImg() {
     let contentRef = document.getElementById('content');
+    contentRef.innerHTML = '';
     for (let index = 0; index < myImgs.length; index++) {
-        contentRef.innerHTML += `<img onclick="openDialog(${index})" class="album" src="./assets/img/${myImgs[index]}" alt="Bild ${index + 1}">`;
+        // click open Dialog in actual number
+        contentRef.innerHTML += `<button onclick="openDialog(${index})"><img class="album" src="./assets/img/${myImgs[index]}" alt="Bild ${index + 1}"></button>`;
     }
 }
 
-//Öffnet das angeklickte Bild
-function updateDialog() {
-    let ImageSrc = `assets/img/${myImgs[currentIndex]}`
-    document.getElementById('dialogImg').src = ImageSrc;
-    document.getElementById('numbers').innerText = `${currentIndex + 1} / ${myImgs.length}`; // P tag eingebunden und zählt Zahl im Overlay Hoch und Runter
-    document.getElementById('imgs-numbers').innerText = `IMG ${currentIndex + 1}  `;
-}
-
-//Dialog öffnen
-function openDialog(index) {
+// 3. Show Photos in Dialog
+function updateDialog(index) {
     currentIndex = index;
-    updateDialog();
-    document.getElementById('dialog-content').style.display = 'flex';
+    document.getElementById('dialogImg').innerHTML = `<img class="dialog-img" src="./assets/img/${myImgs[index]}" alt="Bild ${index + 1}">`;
+    document.getElementById('numbers').innerHTML = `<p>${currentIndex + 1} / ${myImgs.length}</p>`;
+    document.getElementById('imgsNumbers').innerHTML = `<p>${myImgs[index].split('.')[0]}</p>`;
 }
 
-//Dialog schließen
+const dialogRef = document.getElementById("dialogContent");
+
+// 2. Open Dialog with Index
+function openDialog(index) {
+    dialogRef.showModal();
+    updateDialog(index);
+}
+
+//Dialog close
 function closeDialog() {
-    document.getElementById('dialog-content').style.display = 'none';
+    dialogRef.close();
 }
 
-// Vorheriges Bild
+// Prev Photo
 function showPrevImg() {
-    if (currentIndex > 0) {                   //Wenn currentIndex größer als 0
-        currentIndex = currentIndex - 1;      //Wenn currentIndex eins weniger  
+    if (currentIndex > 0) {
+        currentIndex = currentIndex - 1;
     } else {
         currentIndex = myImgs.length - 1;
     }
-    updateDialog();
+    updateDialog(currentIndex);
 }
 
-//Nächstes Bild
+//Next Photo
 function showNextImg() {
     if (currentIndex < myImgs.length - 1) {
         currentIndex = currentIndex + 1;
     } else {
         currentIndex = 0;
     }
-    updateDialog();
+    updateDialog(currentIndex);
 }
 
-// Schließt das Dialog-Element mit der ESC-Taste
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-        closeDialog();
-    }
-});
 
-//Wechselt die Bilder mit der Enter-Taste
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-        showNextImg();
-    }
-});
+
+
 
 
 

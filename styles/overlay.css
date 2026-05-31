@@ -1,4 +1,4 @@
-/*Overlay-Section*/
+/*Dialog*/
 
 .d-none {
     display: none;
@@ -6,32 +6,37 @@
 
 .overlay-section {
     position: fixed;
-    inset: 0;
     height: 688px;
+    width: 688px;
     background-color: var(--nav-footer-bg-overlay-color);
     border-radius: 40px;
     margin: auto;
+    overflow: hidden;
 }
 
-.dialog {
-    padding: 56px 64px 56px 64px;
+dialog[open] {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 48px;
-}
-
-dialog {
     border: solid var(--nav-footer-bg-overlay-color);
 }
 
-.dialog-header {
+dialog {
+    display: none;
+}
+
+/*Dialog-Header*/
+
+dialog header {
+    padding: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.dialog-header p {
+dialog header p {
     font-size: 24px;
     font-weight: 700;
 }
@@ -57,20 +62,27 @@ button {
     transform: scale(110%);
 }
 
-.close {
-    display: none;
+.dialog-img {
+    height: 375px;
+    width: 560px;
+    padding: 48px 0 48px 0;
 }
 
-.dialog-img {
-    width: 560px;
-    height: 375px;
-}
+/*Dialog-Footer*/
 
 .dialog-footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
     gap: 56px;
+}
+
+.img-numbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
 }
 
 .img-rotate {
@@ -87,19 +99,44 @@ button {
     cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
+/*Dialog-Responsive*/
 
-    .dialog {
-        padding: 16px 32px 16px 32px;
-    }
+@media screen and (max-width: 768px) and (min-width: 481px) {
 
     .overlay-section {
-        height: 664px;
-        width: 343px;
-        overflow: hidden;
+        width: 540px;
+
     }
+
+    .dialog-img {
+        width: 380px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    main {
+        padding: 0px;
+    }
+
+    dialog header {
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
 
     .dialog-img {
         width: 300px;
     }
+
+    .overlay-section {
+        width: 320px;
+
+    }
+
+    .dialog-footer {
+        gap: 32px;
+    }
+
 }

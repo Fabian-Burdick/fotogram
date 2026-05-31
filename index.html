@@ -4,48 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap">
     <link rel="icon" href="./assets/logos/Group.png">
-    <link rel="stylesheet" href="./styles/variables.css" />
-    <link rel="stylesheet" href="./styles/fonts.css" />
-    <link rel="stylesheet" href="./styles/overlay.css" />
-    <link rel="stylesheet" href="./styles/responsive.css" />
-    <link rel="stylesheet" href="./styles.css" />
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="./styles/variables.css">
+    <link rel="stylesheet" href="./styles/fonts.css">
+    <link rel="stylesheet" href="./styles/overlay.css">
+    <link rel="stylesheet" href="./styles.css">
+
     <title>Fotogram</title>
 </head>
 
 <body onload="init()">
     <header>
-        <a href="https://google.de" target="_blank">
-            <img src="./assets/logos/Group.png" alt="Logo">
-            <p>Fotogram</p>
-        </a>
+        <div class="header-content">
+            <a href="https://github.com/Fabian-Burdick" target="_blank">
+                <img src="./assets/logos/Group.png" alt="Logo">
+                <p>Fotogram</p>
+            </a>
+        </div>
     </header>
 
     <main>
-        <!--Gallery-->
+        <!--gallery-->
         <section class="gallery-section">
             <h1>Norwegen 2025</h1>
-            <button id="content" class="album"></button>
+
+            <div id="content" class="album">
+                <!--gallery rendered here-->
+            </div>
+
         </section>
-        <!--Dialog-->
-        <dialog id="dialog-content" class="overlay-section d-none">
-            <div class="dialog">
-                <div class="dialog-header">
-                    <p id="imgs-numbers"></p>
+        <!--dialog-->
+        <dialog id="dialogContent" class="overlay-section">
+            <div>
+                <header>
+                    <div id="imgsNumbers"></div>
                     <button class="close-button" onclick="closeDialog()">X</button>
-                </div>
-                <div>
-                    <img id="dialogImg" class="dialog-img">
+                </header>
+                <div id="dialogImg">
+                    <!--overlay Image rendered here-->
                 </div>
                 <div class="dialog-footer">
                     <button>
                         <img onclick="showPrevImg()" class="img-rotate" src="./assets/logos/Property 1=Default (1).png">
                     </button>
-                    <p id="numbers"></p>
+                    <div id="numbers" class="img-numbers">
+                        <!--Imagecounter rendered here-->
+                    </div>
                     <button>
                         <img onclick="showNextImg()" class="img-default"
                             src="./assets/logos/Property 1=Default (1).png">
@@ -56,9 +61,13 @@
     </main>
 
     <footer>
-        <nav><img src="./assets/logos/Logo.png"></nav>
+        <a href="https://developer-akademie.teachable.com/">
+            <img src="./assets/logos/Icon.png">
+            <p>Developer<br>Akademie</p>
+        </a>
         <p>&copy; 2023 Developer Akademie GmbH</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
