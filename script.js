@@ -49,7 +49,7 @@ function addImg() {
     let contentRef = document.getElementById('content');
     contentRef.innerHTML = '';
     for (let index = 0; index < myImgs.length; index++) {
-        // click open Dialog in actual number
+        // Clicking opens the dialog directly with the corresponding number.
         contentRef.innerHTML += `<button onclick="openDialog(${index})"><img class="album" src="./assets/img/${myImgs[index]}" alt="Bild ${index + 1}"></button>`;
     }
 }

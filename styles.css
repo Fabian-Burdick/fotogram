@@ -17,7 +17,6 @@ body {
     background-color: var(--main-bg-color);
     min-height: 100dvh;
     gap: 160px;
-    margin: auto;
 }
 
 /*Header-a+p*/
@@ -33,9 +32,10 @@ header {
 }
 
 .header-content {
-    max-width: 1194px;
+    position: relative;
+    right: 360px;
+    ;
     margin: 0 auto;
-    padding-right: 720px;
 }
 
 header a {
@@ -134,7 +134,24 @@ footer p {
 
 /*Galery-Responsive*/
 
+@media screen and (max-width: 1220px) {
+
+    .header-content {
+        position: static;
+        margin: 0;
+        padding-left: 120px;
+
+
+    }
+}
+
 @media screen and (max-width: 768px) and (min-width: 481px) {
+
+    .header-content {
+        position: static;
+        margin: 0;
+        padding-left: 0px;
+    }
 
     body {
         gap: 80px;
@@ -162,5 +179,10 @@ footer p {
         padding-left: 0px;
     }
 
+    .header-content {
+        position: static;
+        margin: 0;
+        padding-left: 0px;
+    }
 
 }
