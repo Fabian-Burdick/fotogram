@@ -27,6 +27,10 @@ dialog {
     display: none;
 }
 
+body:has(dialog[open]) {
+    overflow: hidden;
+}
+
 /*Dialog-Header*/
 
 dialog header {
@@ -66,6 +70,7 @@ button {
     height: 375px;
     width: 560px;
     padding: 48px 0 48px 0;
+    object-fit: contain;
 }
 
 /*Dialog-Footer*/
@@ -83,6 +88,7 @@ button {
     justify-content: center;
     align-items: center;
     white-space: nowrap;
+
 }
 
 .img-rotate {

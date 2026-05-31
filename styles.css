@@ -89,6 +89,7 @@ main {
     border-radius: 16px;
     border: solid var(--img-solid-color);
     cursor: pointer;
+    object-fit: cover;
 }
 
 .gallery-section img:hover {
